@@ -10,7 +10,7 @@ App by C0MODIN
 def start_vsftpd():
     result = subprocess.run(['systemctl', 'start', 'vsftpd'])
     if result.returncode == 0:
-        tray_icon.setIcon(QIcon('icon_green.png'))
+        tray_icon.setIcon(QIcon('icons/icon_green.png'))
     else:
         tray_icon.setIcon(QIcon('icons/icon_red.png'))
 
