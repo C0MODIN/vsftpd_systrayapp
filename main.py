@@ -4,6 +4,9 @@ from PyQt5.QtWidgets import QApplication, QMenu, QAction, QSystemTrayIcon
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import QTimer
 
+"""
+App by C0MODIN
+"""
 def start_vsftpd():
     result = subprocess.run(['systemctl', 'start', 'vsftpd'])
     if result.returncode == 0:
