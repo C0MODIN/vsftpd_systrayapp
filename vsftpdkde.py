@@ -31,7 +31,7 @@ def check_vsftpd():
         tray_icon.setIcon(QIcon('/opt/vsftpd_systrayapp/icons/vsftpdkde_red.png'))
 
 app = QApplication([])
-tray_icon = QSystemTrayIcon(QIcon('/opt/vsftpd_systrayapp/icons/vsftpdkde_red.png'), parent=None)
+tray_icon = QSystemTrayIcon(QIcon('/opt/vsftpd_systrayapp/icons/vsftpdkde_black.png'), parent=None)
 tray_icon.show()
 
 # crear un objeto QMenu para el menú contextual
