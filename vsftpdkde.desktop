@@ -2,7 +2,7 @@
 [Desktop Entry]
 Name=VSFTPD GUI KDE
 Exec=vsftpdkde
-Icon=utilities-terminal
+Icon=~/.local/share/icons/hicolor/48x48/icons_vsftpdkde/vsftpdkde_red.png
 Terminal=false
 Type=Application
 Version=1.0
