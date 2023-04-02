@@ -10,28 +10,28 @@ App by C0MODIN
 def start_vsftpd():
     result = subprocess.run(['systemctl', 'start', 'vsftpd'])
     if result.returncode == 0:
-        tray_icon.setIcon(QIcon('icons_vsftpdkde/icon_green.png'))
+        tray_icon.setIcon(QIcon('~/.local/share/icons/hicolor/48x48/icons_vsftpdkde/vsftpdkde_green.png'))
     else:
-        tray_icon.setIcon(QIcon('icons_vsftpdkde/icon_red.png'))
+        tray_icon.setIcon(QIcon('~/.local/share/icons/hicolor/48x48/icons_vsftpdkde/vsftpdkde_red.png'))
 
 def stop_vsftpd_proccess():
     result = subprocess.run(['systemctl', 'stop', 'vsftpd'])
     if result.returncode == 0:
-        tray_icon.setIcon(QIcon('icons_vsftpdkde/icon_red.png'))
+        tray_icon.setIcon(QIcon('~/.local/share/icons/hicolor/48x48/icons_vsftpdkde/vsftpdkde_red.png'))
     else:
-        tray_icon.setIcon(QIcon('icons_vsftpdkde/icon_green.png'))
+        tray_icon.setIcon(QIcon('~/.local/share/icons/hicolor/48x48/icons_vsftpdkde/vsftpdkde_green.png'))
 
 def check_vsftpd():
     # ejecutar el comando "systemctl start vsftpd"
     result = subprocess.run(['systemctl', 'status', 'vsftpd'], capture_output=True)
     # verificar el valor de retorno
     if result.returncode == 0:
-        tray_icon.setIcon(QIcon('icons_vsftpdkde/icon_green.png'))
+        tray_icon.setIcon(QIcon('~/.local/share/icons/hicolor/48x48/icons_vsftpdkde/vsftpdkde_green.png'))
     else:
-        tray_icon.setIcon(QIcon('icons_vsftpdkde/icon_red.png'))
+        tray_icon.setIcon(QIcon('~/.local/share/icons/hicolor/48x48/icons_vsftpdkde/vsftpdkde_red.png'))
 
 app = QApplication([])
-tray_icon = QSystemTrayIcon(QIcon('icons_vsftpdkde/icon_red.png'), parent=None)
+tray_icon = QSystemTrayIcon(QIcon('~/.local/share/icons/hicolor/48x48/icons_vsftpdkde/vsftpdkde_red.png'), parent=None)
 tray_icon.show()
 
 # crear un objeto QMenu para el menú contextual
