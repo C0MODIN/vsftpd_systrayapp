@@ -2,7 +2,7 @@
 
 # Create /opt/vsftpd_systrayapp folder
 if [ -d /opt/vsftpd_systrayapp ]; then
-    echo "..."
+    sudo rm -rf /opt/vsftpd_systrayapp
 else
     sudo mkdir /opt/vsftpd_systrayapp
     echo "Directory in /opt created"
