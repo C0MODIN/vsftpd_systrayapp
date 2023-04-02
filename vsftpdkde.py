@@ -1,4 +1,5 @@
 #!/usr/bin/python
+import pathlib
 import subprocess
 from PyQt5.QtWidgets import QApplication, QMenu, QAction, QSystemTrayIcon
 from PyQt5.QtGui import QIcon
@@ -7,31 +8,37 @@ from PyQt5.QtCore import QTimer
 """
 App by C0MODIN
 """
+
+icon_green = pathlib.Path("icons/vsftpdkde_green.png")
+icon_red = pathlib.Path("icons/vsftpdkde_red.png")
+icon_black = pathlib.Path("icons/vsftpdkde_black.png")
+icon_white = pathlib.Path("icons/vsftpdkde_white.png")
+
 def start_vsftpd():
     result = subprocess.run(['systemctl', 'start', 'vsftpd'])
     if result.returncode == 0:
-        tray_icon.setIcon(QIcon('/opt/vsftpd_systrayapp/icons/vsftpdkde_green.png'))
+        tray_icon.setIcon(QIcon(str(icon_green)))
     else:
-        tray_icon.setIcon(QIcon('/opt/vsftpd_systrayapp/icons/vsftpdkde_red.png'))
+        tray_icon.setIcon(QIcon(str(icon_red)))
 
 def stop_vsftpd_proccess():
     result = subprocess.run(['systemctl', 'stop', 'vsftpd'])
     if result.returncode == 0:
-        tray_icon.setIcon(QIcon('/opt/vsftpd_systrayapp/icons/vsftpdkde_red.png'))
+        tray_icon.setIcon(QIcon(str(icon_red)))
     else:
-        tray_icon.setIcon(QIcon('/opt/vsftpd_systrayapp/icons/vsftpdkde_green.png'))
+        tray_icon.setIcon(QIcon(str(icon_green)))
 
 def check_vsftpd():
     # ejecutar el comando "systemctl start vsftpd"
     result = subprocess.run(['systemctl', 'status', 'vsftpd'], capture_output=True)
     # verificar el valor de retorno
     if result.returncode == 0:
-        tray_icon.setIcon(QIcon('/opt/vsftpd_systrayapp/icons/vsftpdkde_green.png'))
+        tray_icon.setIcon(QIcon(str(icon_green)))
     else:
-        tray_icon.setIcon(QIcon('/opt/vsftpd_systrayapp/icons/vsftpdkde_red.png'))
+        tray_icon.setIcon(QIcon(str(icon_red)))
 
 app = QApplication([])
-tray_icon = QSystemTrayIcon(QIcon('/opt/vsftpd_systrayapp/icons/vsftpdkde_white.png'), parent=None)
+tray_icon = QSystemTrayIcon(QIcon(str(icon_white)), parent=None)
 tray_icon.show()
 
 # crear un objeto QMenu para el menú contextual
