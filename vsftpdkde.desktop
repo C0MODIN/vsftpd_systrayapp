@@ -1,8 +1,8 @@
 #!/usr/bin/env xdg-open
 [Desktop Entry]
-Name=VSFTPDKDE
-Exec=/opt/vsftpd_systrayapp/main.py
-Icon=/opt/vsftpd_systrayapp/icon_red.png
+Name=VSFTPD GUI KDE
+Exec=vsftpdkde
+Icon=utilities-terminal
 Terminal=false
 Type=Application
 Version=1.0
