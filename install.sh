@@ -14,7 +14,7 @@ else
     echo "Desktop file created"
 fi
 
-sudo cp -r icons/ main.py /opt/vsftpd_systrayapp && sudo cp vsftpdkde.desktop /usr/share/applications/VSFTPDKDE && sudo chmod +x /opt/vsftpd_systrayapp/main.py && sudo chmod a+r /usr/share/applications/vsftpdkde.desktop
+sudo cp -r icons/ main.py /opt/vsftpd_systrayapp && sudo cp vsftpdkde.desktop /usr/share/applications/VSFTPDKDE && sudo chmod +x /opt/vsftpd_systrayapp/main.py && sudo chmod a+r /usr/share/applications/vsftpdkde.desktop && sudo ln -s /opt/vsftpd_systrayapp/main.py /usr/local/bin/vsftpdkde
 if [ $? -eq 0 ]; then
     echo "Installation succesfully"
 fi
