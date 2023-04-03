@@ -9,10 +9,10 @@ from PyQt5.QtCore import QTimer
 App by C0MODIN
 """
 
-icon_green = pathlib.Path("icons/vsftpdkde_green.png")
-icon_red = pathlib.Path("icons/vsftpdkde_red.png")
-icon_black = pathlib.Path("icons/vsftpdkde_black.png")
-icon_white = pathlib.Path("icons/vsftpdkde_white.png")
+icon_green = pathlib.Path("icons/vsftpdkde_green.png").resolve()
+icon_red = pathlib.Path("icons/vsftpdkde_red.png").resolve()
+icon_black = pathlib.Path("icons/vsftpdkde_black.png").resolve()
+icon_white = pathlib.Path("icons/vsftpdkde_white.png").resolve()
 
 def start_vsftpd():
     result = subprocess.run(['systemctl', 'start', 'vsftpd'])
