@@ -8,11 +8,10 @@ from PyQt5.QtCore import QTimer
 """
 App by C0MODIN
 """
-current_path = pathlib.Path.cwd()
-icon_white = current_path.joinpath("icons", "vsftpdkde_white.png")
-icon_black = current_path.joinpath("icons", "vsftpdkde_black.png")
-icon_green = current_path.joinpath("icons", "vsftpdkde_green.png")
-icon_red = current_path.joinpath("icons", "vsftpdkde_red.png")
+icon_white = ("/opt/vsftpd_systrayapp/icons/vsftpdkde_white.png")
+icon_black = ("/opt/vsftpd_systrayapp/icons/vsftpdkde_black.png")
+icon_green = ("/opt/vsftpd_systrayapp/icons/vsftpdkde_green.png")
+icon_red = ("/opt/vsftpd_systrayapp/icons/vsftpdkde_red.png")
 
 
 def start_vsftpd():
