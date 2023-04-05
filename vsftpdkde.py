@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import socket
 import subprocess
+import pyperclip
 from PyQt5.QtWidgets import QApplication, QMenu, QAction, QSystemTrayIcon
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import QTimer
@@ -20,7 +21,6 @@ hostname = socket.gethostname()
 ip_address = socket.gethostbyname(hostname)
 
 def copy_clipboard():
-    import pyperclip
     text_copy = ip_address
     pyperclip.copy(text_copy)
 
