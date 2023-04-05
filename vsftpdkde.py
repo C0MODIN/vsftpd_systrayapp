@@ -1,5 +1,5 @@
 #!/usr/bin/python
-import pathlib
+import socket
 import subprocess
 from PyQt5.QtWidgets import QApplication, QMenu, QAction, QSystemTrayIcon
 from PyQt5.QtGui import QIcon
@@ -13,6 +13,16 @@ icon_black = ("/opt/vsftpd_systrayapp/icons/vsftpdkde_black.png")
 icon_green = ("/opt/vsftpd_systrayapp/icons/vsftpdkde_green.png")
 icon_red = ("/opt/vsftpd_systrayapp/icons/vsftpdkde_red.png")
 
+# Obtener el nombre de host de la máquina
+hostname = socket.gethostname()
+
+# Obtener la dirección IP local de la máquina
+ip_address = socket.gethostbyname(hostname)
+
+def copy_clipboard():
+    import pyperclip
+    text_copy = ip_address
+    pyperclip.copy(text_copy)
 
 def start_vsftpd():
     result = subprocess.run(['systemctl', 'start', 'vsftpd'])
@@ -44,6 +54,12 @@ tray_icon.show()
 # crear un objeto QMenu para el menú contextual
 menu = QMenu()
 tray_icon.setContextMenu(menu)
+
+# mostrar IP actual
+my_ip = ip_address
+start_action = QAction(str(my_ip), parent=menu)
+start_action.triggered.connect(copy_clipboard)
+menu.addAction(start_action)
 
 # agregar una acción de menú para iniciar vsftpd
 start_action = QAction('Start vsftpd', parent=menu)
