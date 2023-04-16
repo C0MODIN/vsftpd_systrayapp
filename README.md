@@ -5,7 +5,7 @@ System tray app for kde to activate and stop vsftpd service.
 
 ## Install option
 
-Make sure have install vsftpd package
+Make sure have installed vsftpd package
 
 1. Assign execute permission.
 ```
