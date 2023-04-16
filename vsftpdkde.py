@@ -5,6 +5,7 @@ import pyperclip
 from PyQt5.QtWidgets import QApplication, QMenu, QAction, QSystemTrayIcon
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import QTimer
+import time
 
 """
 App by C0MODIN
@@ -57,6 +58,7 @@ tray_icon.setContextMenu(menu)
 
 # mostrar IP actual
 my_ip = ip_address
+time.sleep(10)
 start_action = QAction(str(my_ip), parent=menu)
 start_action.triggered.connect(copy_clipboard)
 menu.addAction(start_action)
